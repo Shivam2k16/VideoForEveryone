@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-body">
+<table class="table table-hover table-bordered">
+  <thead>
+  <tr>
+      <td *ngFor="let i of key1">{{i}}</td>
+      <td colspan="2">Actions</td>
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let info of infor">
+          <td *ngFor="let i of key2">{{ info[i]}}</td>
+          <td><a [routerLink]="['edit', info._id]"  class="btn btn-primary">Edit</a></td>
+          <td><a [routerLink]="" (click)="deleteInfo(info._id)" class="btn btn-danger">Delete</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>

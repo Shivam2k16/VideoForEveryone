@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-3">Song Name</label>
+        <input type="text" class="form-control" formControlName="song_name" #song_name />
+      </div>
+      <div *ngIf="angForm.controls['song_name'].invalid && (angForm.controls['song_name'].dirty || angForm.controls['song_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['song_name'].errors.required">
+          Song Name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Description</label>
+        <input type="text" class="form-control" formControlName="description" #description />
+      </div>
+      <div *ngIf="angForm.controls['description'].invalid && (angForm.controls['description'].dirty || angForm.controls['description'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['description'].errors.required">
+          Description is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Size (in MB)</label>
+        <input type="number" class="form-control" formControlName="size" #size />
+      </div>
+      <div *ngIf="angForm.controls['size'].invalid && (angForm.controls['size'].dirty || angForm.controls['size'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['size'].errors.required">
+          Invalid Size
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Image Url</label>
+        <input type="url" class="form-control" formControlName="image_url" #image_url />
+      </div>
+      <div *ngIf="angForm.controls['image_url'].invalid && (angForm.controls['image_url'].dirty || angForm.controls['image_url'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['image_url'].errors.required">
+         Image Url is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Song Url</label>
+        <input type="url" class="form-control" formControlName="song_url" #song_url />
+      </div>
+      <div *ngIf="angForm.controls['song_url'].invalid && (angForm.controls['song_url'].dirty || angForm.controls['song_url'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['song_url'].errors.required">
+         Song Url is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3">Extra</label>
+        <input type="text" class="form-control" formControlName="extra" #extra />
+      </div>
+      <div *ngIf="angForm.controls['extra'].invalid && (angForm.controls['extra'].dirty || angForm.controls['extra'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['extra'].errors.required">
+         Something Extra is required
+        </div>
+      </div>
+      <div class="form-group">
+		    <button (click)="addInfo(song_name.value,description.value,size.value,image_url.value,song_url.value,extra.value)"
+		        [disabled]="angForm.pristine || angForm.invalid"
+		        class="btn btn-primary">
+		        Submit
+		    </button>
+	  </div>
+    </form>
+  </div>
+</div>

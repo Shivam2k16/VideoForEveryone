@@ -1,0 +1,11 @@
+<h3>List of Cover Songs</h3>
+<div class="card">
+  <div class="card-body">
+  <div *ngFor="let a of infor" class="float-left">
+ <figure class="p-4">
+  <img class="bg-info text-center" src={{a.image_url}} alt={{a.song_name}} width="200" height="200">
+  <figcaption class="text-center">{{a.song_name}}</figcaption>
+ </figure> 
+</div>
+</div>
+</div> 

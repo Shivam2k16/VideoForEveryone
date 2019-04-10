@@ -16,11 +16,7 @@ var routesApi = require('./routes/index');
 
     const infoRoute = require('./routes/info.route');
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost:27017/ng7audio', { useMongoClient: true,useNewUrlParser: true ,
-  auth: {
-    user: "shivam",
-    password: "shivam@789"
-  }}).then(
+    mongoose.connect('mongodb://localhost:27017/ng7audio', { useNewUrlParser: true}).then(
       () => {console.log('Database is connected') },
       err => { console.log('Can not connect to the database'+ err)}
     );

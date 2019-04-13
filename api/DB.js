@@ -1,3 +1,3 @@
 module.exports = {
-    DB: 'mongodb://localhost:27017/ng7audio'
+    DB: 'mongodb://0.0.0.0:27017/ng7audio'
  };

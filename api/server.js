@@ -16,7 +16,7 @@ var routesApi = require('./routes/index');
 
     const infoRoute = require('./routes/info.route');
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost:27017/ng7audio', { useNewUrlParser: true}).then(
+    mongoose.connect('mongodb://0.0.0.0:27017/ng7audio', { useNewUrlParser: true}).then(
       () => {console.log('Database is connected') },
       err => { console.log('Can not connect to the database'+ err)}
     );
@@ -34,7 +34,7 @@ const app = express();
     
     const port = process.env.PORT || 4000;
 
-    const server = app.listen(port, function(){
+    const server = app.listen(port,"0.0.0.0", function(){
      console.log('Listening on port ' + port);
     });
 

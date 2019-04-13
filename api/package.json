@@ -1,11 +1,14 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "", 
+  "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run build",
     "start": "nodemon server.js"
+  },
+  "engines": {
+    "node": "11.10.1",
+    "npm": "6.8.0"
   },
   "keywords": [],
   "author": "",
